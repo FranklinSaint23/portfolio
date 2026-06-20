@@ -18,7 +18,7 @@ const projects = [
   {
     title: "SGEC",
     desc: "Une plateforme intelligente, sécurisée et géospatiale pour la gestion des actes d’état civil dans un contexte africain.",
-    tags: ["Electron", "React.js", "Laravel", "FastAPI", "API REST", "PostgreSQL", "Géospatial"],
+    tags: ["Electron", "React JS", "Laravel", "FastAPI", "API REST", "PostgreSQL", "Géospatial"],
     gradient: "from-emerald-600/20 via-green-600/10 to-transparent",
     border: "border-emerald-500/20 hover:border-emerald-500/40",
     featured: true,
