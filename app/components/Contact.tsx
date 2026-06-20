@@ -231,7 +231,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto mt-24 pt-8 border-t border-white/5 text-center text-sm text-white/25">
         <p>
           © {new Date().getFullYear()} Franklin NJIEPI.{" "}
-          <span className="text-pink-400">Tout droits réservés</span>
+          <span className="text-pink-400">Tous droits réservés</span>
         </p>
         <p className="mt-1 text-xs text-white/15">
           v1.0.0 · Propulsé par la passion de la tech ✦
