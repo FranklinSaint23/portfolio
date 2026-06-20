@@ -28,7 +28,7 @@ const projects = [
   {
     title: "Tontine",
     desc: "Gérez vos tontines simplement — cotisations, cycles rotatifs, crédits et membres, tout en un seul endroit.",
-    tags: ["JavaScript", "Node.js"],
+    tags: ["React JS", "FastAPI"],
     gradient: "from-cyan-600/20 via-teal-600/10 to-transparent",
     border: "border-cyan-500/20 hover:border-cyan-500/40",
     featured: false,
