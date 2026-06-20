@@ -6,6 +6,16 @@ import GitHubIcon from "./icons/GitHubIcon";
 
 const projects = [
   {
+    title: "NjangiMarket",
+    desc: "Plateforme web de gestion des marchés locaux camerounais — njangi (tontines), produits, vendeurs et transactions. Solution pensée pour digitaliser et structurer l'économie informelle locale.",
+    tags: ["Laravel", "PHP", "Blade", "Tailwind CSS", "MySQL", "API REST"],
+    gradient: "from-orange-600/20 via-amber-600/10 to-transparent",
+    border: "border-orange-500/20 hover:border-orange-500/40",
+    featured: true,
+    github: "https://github.com/FranklinSaint23/njangimarket",
+    live: null,
+  },
+  {
     title: "Holla CM",
     desc: "Plateforme intelligente d'optimisation des flux de commandes et de livraison de biens et services en milieu urbain au Cameroun. Développée avec Flutter et Supabase.",
     tags: ["Flutter", "Dart", "Supabase", "Mobile"],
