@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, Download } from "lucide-react";
 import GitHubIcon from "./icons/GitHubIcon";
 import LinkedInIcon from "./icons/LinkedInIcon";
 
@@ -94,6 +94,14 @@ export default function Hero() {
             className="px-8 py-3 rounded-full font-medium bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-0.5"
           >
             Me contacter
+          </a>
+          <a
+            href="/cv-franklin-njiepi.pdf"
+            download
+            className="flex items-center gap-2 px-8 py-3 rounded-full font-medium bg-white/5 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Download size={16} />
+            Télécharger mon CV
           </a>
         </motion.div>
 

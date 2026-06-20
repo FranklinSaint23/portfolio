@@ -1,7 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin, Phone } from "lucide-react";
 import GitHubIcon from "./icons/GitHubIcon";
 import LinkedInIcon from "./icons/LinkedInIcon";
 
@@ -22,7 +22,7 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ export default function Contact() {
       });
       if (res.ok) {
         setStatus("sent");
-        setForm({ name: "", email: "", message: "" });
+        setForm({ name: "", email: "", subject: "", message: "" });
       } else {
         setStatus("error");
       }
@@ -103,6 +103,12 @@ export default function Contact() {
                     href: "https://www.linkedin.com/in/franklin-njiepi-23953b339/",
                   },
                   {
+                    icon: Phone,
+                    label: "WhatsApp",
+                    value: "+237 650 435 901",
+                    href: "https://wa.me/237650435901",
+                  },
+                  {
                     icon: MapPin,
                     label: "Localisation",
                     value: "Yaoundé, Cameroun",
@@ -150,13 +156,13 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm text-white/50 mb-1.5">Nom</label>
+                    <label className="block text-sm text-white/50 mb-1.5">Nom complet</label>
                     <input
                       type="text"
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="Votre nom"
+                      placeholder="Votre nom complet"
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-white/25 focus:outline-none focus:border-violet-500/50 focus:bg-white/8 transition-all"
                     />
                   </div>
@@ -171,6 +177,16 @@ export default function Contact() {
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-white/25 focus:outline-none focus:border-violet-500/50 focus:bg-white/8 transition-all"
                     />
                   </div>
+                </div>
+                <div>
+                  <label className="block text-sm text-white/50 mb-1.5">Sujet</label>
+                  <input
+                    type="text"
+                    value={form.subject}
+                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                    placeholder="Objet de votre message"
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-white/25 focus:outline-none focus:border-violet-500/50 focus:bg-white/8 transition-all"
+                  />
                 </div>
                 <div>
                   <label className="block text-sm text-white/50 mb-1.5">Message</label>
@@ -214,8 +230,11 @@ export default function Contact() {
       {/* Footer */}
       <div className="max-w-6xl mx-auto mt-24 pt-8 border-t border-white/5 text-center text-sm text-white/25">
         <p>
-          © {new Date().getFullYear()} Franklin NJIEPI. {" "}
+          © {new Date().getFullYear()} Franklin NJIEPI.{" "}
           <span className="text-pink-400">Tout droits réservés</span>
+        </p>
+        <p className="mt-1 text-xs text-white/15">
+          v1.0.0 · Propulsé par la passion de la tech ✦
         </p>
       </div>
     </section>

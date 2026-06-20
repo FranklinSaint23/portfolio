@@ -105,11 +105,28 @@ export default function About() {
                   )
                 )}
               </div>
+              <div className="mt-4 p-4 rounded-xl bg-white/3 border border-violet-500/15">
+                <p className="text-sm text-white/60 leading-relaxed italic">
+                  <span className="text-violet-400 font-bold not-italic text-base">&ldquo;</span>
+                  {" "}Comprendre ce que les autres ne comprennent pas encore et agir pendant qu&apos;ils attendent.{" "}
+                  <span className="text-violet-400 font-bold not-italic text-base">&rdquo;</span>
+                </p>
+                <p className="text-xs text-white/30 mt-2 not-italic">— Ma philosophie</p>
+              </div>
             </div>
           </FadeIn>
 
-          {/* Stats */}
+          {/* Photo + Stats */}
           <FadeIn delay={0.2}>
+            <div className="space-y-6">
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="w-52 h-52 rounded-2xl overflow-hidden border border-violet-500/30 shadow-2xl shadow-violet-900/30">
+                    <img src="/moi.jpeg" alt="Franklin NJIEPI" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 blur-lg -z-10" />
+                </div>
+              </div>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: "3+", label: "Expériences professionnelles" },
@@ -127,6 +144,7 @@ export default function About() {
                   <div className="text-sm text-white/50">{s.label}</div>
                 </div>
               ))}
+            </div>
             </div>
           </FadeIn>
         </div>

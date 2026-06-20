@@ -5,17 +5,21 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, subject, message } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Champs manquants" }, { status: 400 });
     }
 
+    const emailSubject = subject
+      ? `[Portfolio] ${subject} — ${name}`
+      : `[Portfolio] Message de ${name}`;
+
     const { error } = await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
       to: "franklinnjiepi07@gmail.com",
       replyTo: email,
-      subject: `[Portfolio] Message de ${name}`,
+      subject: emailSubject,
       html: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f9f9f9;border-radius:12px;">
           <h2 style="color:#7c3aed;margin-bottom:4px;">Nouveau message depuis votre portfolio</h2>
@@ -32,6 +36,11 @@ export async function POST(req: Request) {
                 <a href="mailto:${email}" style="color:#7c3aed;">${email}</a>
               </td>
             </tr>
+            ${subject ? `
+            <tr>
+              <td style="padding:8px 0;color:#6b7280;font-size:14px;">Sujet</td>
+              <td style="padding:8px 0;font-weight:600;color:#111827;">${subject}</td>
+            </tr>` : ""}
           </table>
 
           <hr style="border:none;border-top:1px solid #e5e7eb;margin:16px 0;" />

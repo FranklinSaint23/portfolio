@@ -40,6 +40,7 @@ const categories = [
       { name: "MongoDB / SQL Server", level: 75 },
       { name: "Git / GitHub / Docker", level: 85 },
       { name: "UML / MERISE / Agile", level: 80 },
+      { name: "Ubuntu / Linux", level: 10 },
     ],
   },
 ];
